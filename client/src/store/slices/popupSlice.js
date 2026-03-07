@@ -6,7 +6,15 @@ const popupSlice = createSlice({
     isCreateStudentModalOpen: false,
     isCreateTeacherModalOpen: false,
   },
-  reducers: {},
+  reducers: {
+    toggleStudentModal(state) {
+      state.isCreateStudentModalOpen = !state.isCreateStudentModalOpen;
+    },
+    toggleTeacherModal(state) {
+      state.isCreateTeacherModalOpen = !state.isCreateTeacherModalOpenModal;
+    },
+  },
 });
 
+export const { toggleStudentModal, toggleTeacherModal } = popupSlice.actions;
 export default popupSlice.reducer;
