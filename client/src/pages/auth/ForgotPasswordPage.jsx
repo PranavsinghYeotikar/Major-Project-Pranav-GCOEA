@@ -2,13 +2,15 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { forgotPassword } from "../../store/slices/authSlice";
-import { KeyRound } from "lucide-react";
+import { KeyRound, Loader } from "lucide-react";
 
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isRequestingForToken] = useSelector((state) => state.auth);
+  const isRequestingForToken = useSelector(
+    (state) => state.auth.isRequestingForToken,
+  );
 
   const dispatch = useDispatch();
 

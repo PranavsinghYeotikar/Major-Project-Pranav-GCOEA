@@ -6,7 +6,7 @@ import { BookOpen, Loader } from "lucide-react";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
-  const { isLogin, authUser, isLoggingIn } = useSelector((state) => state.auth);
+  const {authUser, isLoggingIn } = useSelector((state) => state.auth);
 
   const [formData, setFormData] = useState({
     email: "",
